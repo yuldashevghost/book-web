@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Genres
+{% endblock %}
+{% block content %}
+    <h2 class="mt-3 mb-2 text-danger">Genres</h2><br>
+    <div class="row p-2 m-2">
+        {% for genre in genres %}
+            <div class="col-8 my-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ genre.name }}</h4>
+                        <p class="card-text">{{ genre.description|slice:64 }}...</p>
+                        <a href="{% url 'books:genre_detail' genre.name %}" class="card-link">More about {{ genre.name }}</a>
+                    </div>
+                </div>
+                <br>
+            </div>
+        {% endfor %}
+
+    </div>
+{% endblock %}

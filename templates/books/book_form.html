@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+    Add new book
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-8 offset-md-2">
+            <h2>Add new Book</h2>
+            <form enctype="multipart/form-data" method="post" class="my-2">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input type="submit" value="Save" class="btn btn-outline-dark">
+            </form>
+        </div>
+    </div>
+{% endblock %}

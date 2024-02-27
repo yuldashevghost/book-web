@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+	User Profile
+{% endblock %}
+{% block content %}
+	<div class="row py-3">
+    <div class="col-2 offset-md-1">
+        <img src="{{ user.avatar.url }}" alt="User avatar" class="rounded-circle img-fluid">
+    </div>
+    <div class="col-7">
+        <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+        <p>User Profile Page</p>
+    </div>
+    </div>
+{% endblock %}
